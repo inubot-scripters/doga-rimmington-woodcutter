@@ -36,8 +36,8 @@ public class MakePlanksTask extends Task {
     Npc butler = Npcs.query().names(domain.getServant().toString()).results().first();
 
     if (butler == null || butler.distance() > 3) {
-      Log.info("HUH " + domain.getServant().toString());
       if (!HouseOptions.isOpen()) {
+        //i fixed this in the api but needs a bot release
         InterfaceComponent component = Interfaces.query(InterfaceComposite.SETTINGS_TAB)
             .actions("View House Options")
             .results()
