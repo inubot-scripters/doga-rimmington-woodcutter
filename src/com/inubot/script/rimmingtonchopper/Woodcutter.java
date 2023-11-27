@@ -49,6 +49,7 @@ public class Woodcutter extends TaskScript {
   @Override
   public Class<? extends Task>[] tasks() {
     return ArrayUtils.getTypeSafeArray(
+        StopTask.class,
         ToggleRunTask.class,
         ChopTask.class,
         EnterPortalTask.class,

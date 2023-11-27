@@ -4,7 +4,6 @@ import com.google.inject.Inject;
 import com.inubot.script.rimmingtonchopper.Domain;
 import com.inubot.script.rimmingtonchopper.Province;
 import org.rspeer.commons.Pair;
-import org.rspeer.commons.logging.Log;
 import org.rspeer.game.adapter.component.inventory.Inventory;
 import org.rspeer.game.adapter.scene.Player;
 import org.rspeer.game.adapter.scene.SceneObject;
