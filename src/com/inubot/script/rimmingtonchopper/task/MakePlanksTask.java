@@ -50,7 +50,9 @@ public class MakePlanksTask extends Task {
 
 
     if (Dialog.canContinue()) {
-      if (domain.getMode() == Mode.PLANKS) {
+      if (Dialog.getText().contains("pay me")) {
+        wage();
+      } else if (domain.getMode() == Mode.PLANKS) {
         sawmill();
       } else if (domain.getMode() == Mode.LOGS) {
         bank();
@@ -65,6 +67,13 @@ public class MakePlanksTask extends Task {
     );
     sleepUntil(Dialog::canContinue, 2);
     return true;
+  }
+
+  private void wage() {
+    Dialog.Quick.process(
+        new InterfaceAddress(InterfaceComposite.NPC_DIALOG, 5), //Continue
+        new InterfaceAddress(InterfaceComposite.CHAT_OPTIONS, 1).subComponent(1) //Pay wage
+    );
   }
 
   private void sawmill() {
