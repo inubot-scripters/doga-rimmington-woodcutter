@@ -34,7 +34,6 @@ public class MakePlanksTask extends Task {
     }
 
     Npc butler = Npcs.query().names(domain.getServant().toString()).results().first();
-
     if (butler == null || butler.distance() > 3) {
       if (!HouseOptions.isOpen()) {
         //i fixed this in the api but needs a bot release
@@ -50,7 +49,7 @@ public class MakePlanksTask extends Task {
 
 
     if (Dialog.canContinue()) {
-      if (Dialog.getText().contains("pay me")) {
+      if (Dialog.getText().contains("pay me") || Dialog.getText().contains("desirest")) {
         wage();
       } else if (domain.getMode() == Mode.PLANKS) {
         sawmill();
