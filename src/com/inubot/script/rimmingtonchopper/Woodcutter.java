@@ -25,7 +25,7 @@ import java.util.function.Supplier;
     paint = PaintScheme.class,
     desc = "Chops oak trees and uses a house servant to bank the logs or turn them into planks. Great for irons!",
     developer = "Doga",
-    version = 1.01
+    version = 1.02
 )
 @ScriptUI({
     @ScriptOption(name = "Servant", type = Servant.class),
