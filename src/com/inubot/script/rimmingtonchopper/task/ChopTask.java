@@ -7,6 +7,7 @@ import org.rspeer.commons.Pair;
 import org.rspeer.game.adapter.component.inventory.Inventory;
 import org.rspeer.game.adapter.scene.Player;
 import org.rspeer.game.adapter.scene.SceneObject;
+import org.rspeer.game.component.Inventories;
 import org.rspeer.game.component.Item;
 import org.rspeer.game.scene.Players;
 import org.rspeer.game.script.Task;
@@ -52,7 +53,7 @@ public class ChopTask extends Task {
   }
 
   private Pair<Item, Item> getTickManipulators() {
-    Inventory inv = Inventory.backpack();
+    Inventory inv = Inventories.backpack();
     if (inv.contains(x -> x.nameContains("Pestle").results())) {
       Item first = inv.query().names("Guam leaf", "Marrentill").results().first();
       Item second = inv.query().nameContains("Swamp tar").results().first();

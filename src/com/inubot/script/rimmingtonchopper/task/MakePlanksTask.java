@@ -4,9 +4,7 @@ import com.google.inject.Inject;
 import com.inubot.script.rimmingtonchopper.Domain;
 import com.inubot.script.rimmingtonchopper.Province;
 import com.inubot.script.rimmingtonchopper.data.Mode;
-import org.rspeer.commons.logging.Log;
 import org.rspeer.game.adapter.component.InterfaceComponent;
-import org.rspeer.game.adapter.component.inventory.Inventory;
 import org.rspeer.game.adapter.scene.Npc;
 import org.rspeer.game.component.*;
 import org.rspeer.game.scene.Npcs;
@@ -60,7 +58,7 @@ public class MakePlanksTask extends Task {
       return true;
     }
 
-    Inventory.backpack().use(
+    Inventories.backpack().use(
         iq -> iq.names("Oak logs").results().first(),
         butler
     );
